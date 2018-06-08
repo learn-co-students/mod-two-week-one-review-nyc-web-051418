@@ -1,6 +1,7 @@
 
 <div class="container">
   <form method="POST" action="/seas/<%=@sea.id%>">
+    <!-- <input name="_method" type="hidden" value="patch" /> -->
     <p>Name: <input class="form-control" type="text" value= "<%= @sea.name %>" name="name"></p>
     <p>Bio: <input class="form-control" type="text" value= "<%= @sea.bio %>" name="bio"></p>
     <p>Image URL: <input class="form-control" type="text" value= "<%= @sea.image_url %>" name="image_url"></p>

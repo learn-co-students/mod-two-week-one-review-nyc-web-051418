@@ -1,5 +1,41 @@
 class SeasController < ApplicationController
   #define your controller actions here
+  def index
+    @seas=Sea.all
+  end
+
+  def new
+@sea = Sea.new
+  end
+
+  def create
+    @sea = Sea.new(sea_params)
+    if @sea.save
+  redirect_to @sea
+    else
+  render "new"
+    end
+  end
+
+  def show
+    @sea = Sea.find(params[:id])
+  end
+
+  def edit
+    @sea = Sea.find(params[:id])
+  end
+  def update
+    @sea = Sea.find(params[:id])
+    sea_params[:has_mermaids] ||= false
+    @sea.update(sea_params)
+    redirect_to "/seas/#{@sea.id}"
+  end
+
+  def destroy
+    @sea = Sea.find(params[:id])
+    @sea.destroy
+    redirect_to "/seas"
+  end
 
 
   private
