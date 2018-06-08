@@ -1,28 +1,55 @@
-<%= form_for @sea do |f| %>
+<div class="container">
+  <div class="col-md-8 col-sm-12">
+  <%= form_for @sea do |f| %>
+  <div class="width">
   <%= f.label :name %>
   <%= f.text_field :name %>
+  </div>
 
+  <div class="width">
   <%= f.label :temperature %>
   <%= f.number_field :temperature %>
+  </div>
 
+  <div class="width">
   <%= f.label :bio %>
   <%= f.text_area :bio %>
+</div>
+
+<div class="width">
 
   <%= f.label :image_url %>
   <%= f.text_field :image_url %>
+</div>
+
+<div class="width">
 
   <%= f.label :mood %>
   <%= f.text_field :mood %>
+</div>
+
+<div class="width">
 
   <%= f.label :favorite_color %>
   <%= f.text_field :favorite_color %>
+</div>
+
+<div class="width">
 
   <%= f.label :scariest_creature %>
   <%= f.text_field :scariest_creature %>
+</div>
+
+<div class="width">
 
   <%= f.label :has_mermaids %>
   <%= f.check_box :has_mermaids %>
+</div>
+
+<div class="width">
 
   <%=  f.submit %>
-
+</div>
   <% end %>
+</div>
+</div>
