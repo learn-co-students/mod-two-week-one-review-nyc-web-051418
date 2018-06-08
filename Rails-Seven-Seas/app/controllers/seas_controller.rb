@@ -1,5 +1,19 @@
 class SeasController < ApplicationController
   #define your controller actions here
+  def welcome
+  end
+
+  def index
+    @seas = Sea.all
+  end
+
+  def new
+    @sea = Sea.create(params[:sea])
+  end
+
+  def show
+    @sea = Sea.find_by(id: params[:id])
+  end
 
 
   private
@@ -9,5 +23,6 @@ class SeasController < ApplicationController
   def sea_params
     params.require(:sea).permit(:name, :temperature, :bio, :mood, :image_url, :favorite_color, :scariest_creature, :has_mermaids)
   end
+
 
 end
