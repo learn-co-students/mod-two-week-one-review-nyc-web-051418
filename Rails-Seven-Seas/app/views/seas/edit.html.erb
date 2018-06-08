@@ -26,3 +26,7 @@
   <%=  f.submit %>
 
   <% end %>
+
+  <%= form_for(@sea, :html => { :method => :delete, :remote => true }) do |f| %>
+  <%= f.submit :value => "Delete" %>
+  <% end %>

@@ -27,7 +27,6 @@ class SeasController < ApplicationController
 
   get "/seas/:id/edit" do
     @sea = Sea.find(params[:id])
-
     erb :'edit.html'
   end
 
