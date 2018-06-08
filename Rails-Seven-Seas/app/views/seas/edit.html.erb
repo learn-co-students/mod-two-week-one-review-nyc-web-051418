@@ -1,28 +1,36 @@
+
 <%= form_for @sea do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <p class="form-control" type="text" ><%= f.label :name %>
+  <%= f.text_field :name %> </p>
 
-  <%= f.label :temperature %>
-  <%= f.number_field :temperature %>
+  <p class="form-control" type="text" ><%= f.label :temperature %>
+  <%= f.number_field :temperature %></p>
 
-  <%= f.label :bio %>
-  <%= f.text_area :bio %>
+  <p class="form-control" type="text" ><%= f.label :bio %>
+  <%= f.text_field :bio %></p>
 
-  <%= f.label :image_url %>
-  <%= f.text_field :image_url %>
+  <p class="form-control" type="text" ><%= f.label :image_url %>
+  <%= f.text_field :image_url %></p>
 
-  <%= f.label :mood %>
-  <%= f.text_field :mood %>
+<p class="form-control" type="text" >  <%= f.label :mood %>
+  <%= f.text_field :mood %></p>
 
-  <%= f.label :favorite_color %>
-  <%= f.text_field :favorite_color %>
+  <p class="form-control" type="text" ><%= f.label :favorite_color %>
+  <%= f.text_field :favorite_color %></p>
 
-  <%= f.label :scariest_creature %>
+  <p class="form-control" type="text" ><%= f.label :scariest_creature %>
   <%= f.text_field :scariest_creature %>
 
-  <%= f.label :has_mermaids %>
-  <%= f.check_box :has_mermaids %>
+  <p class="form-control" type="text" ><%= f.label :has_mermaids %>
+  <%= f.check_box :has_mermaids %></p>
 
   <%=  f.submit %>
-
+<!-- <%= hidden_field_tag :authenticity_token, form_authenticity_token %> -->
   <% end %>
+  <!-- <form action="/seas/<%=@sea.id%>/delete" method="post" style="margin: 0 auto">
+      <input class="btn btn-danger" type="submit" value="Delete"/>
+  </form> -->
+  <%= form_for(@sea, :html => { :method => :delete, :remote => true }) do |f| %>
+  <p class="form-control btn btn-info"> <%= f.submit :value => "Delete" %> </p>
+  <!-- <%= hidden_field_tag :authenticity_token, form_authenticity_token %> -->
+  <%end%>
