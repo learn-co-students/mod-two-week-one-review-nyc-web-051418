@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180608151434) do
+ActiveRecord::Schema.define(version: 20180609205550) do
 
   create_table "seas", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20180608151434) do
     t.boolean "has_mermaids", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "wave_height"
   end
 
 end

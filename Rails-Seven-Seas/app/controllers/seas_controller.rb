@@ -13,6 +13,7 @@ class SeasController < ApplicationController
 
   def create
     @sea = Sea.create(sea_params)
+    #  byebug
     redirect_to sea_path(@sea.id), :notice => "sea has been created"
   end
 
@@ -23,7 +24,7 @@ class SeasController < ApplicationController
   end
 
   def edit
-    # byebug
+     # byebug
     @sea = Sea.find_by(id: params[:id])
   end
 
@@ -48,7 +49,7 @@ class SeasController < ApplicationController
   # Example: @sea.update(sea_params)
   # check the return value of sea_params to see what you're working with!
   def sea_params
-    params.require(:sea).permit(:name, :temperature, :bio, :mood, :image_url, :favorite_color, :scariest_creature, :has_mermaids)
+    params.require(:sea).permit(:name, :temperature, :bio, :mood, :image_url, :favorite_color, :scariest_creature, :has_mermaids, :wave_height)
   end
 
 
