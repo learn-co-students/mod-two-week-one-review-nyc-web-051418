@@ -8,14 +8,22 @@ class SeasController < ApplicationController
   end
 
   def new
-    @sea = Sea.create(params[:sea])
+    @sea = Sea.new(params[:sea])
   end
 
+  def create
+    @sea = Sea.create(sea_params)
+    redirect_to sea_path(@sea.id), :notice => "sea has been created"
+  end
+
+
   def show
+    # byebug
     @sea = Sea.find_by(id: params[:id])
   end
 
   def edit
+    # byebug
     @sea = Sea.find_by(id: params[:id])
   end
 
